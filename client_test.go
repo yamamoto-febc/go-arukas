@@ -234,6 +234,23 @@ func TestAccAppCRUD(t *testing.T) {
 	})
 }
 
+func TestAccResourceNotFound(t *testing.T) {
+	if !isAccTest() {
+		t.SkipNow()
+	}
+
+	defer initialize()()
+	c := &client{
+		httpAPI: realHTTPClient,
+	}
+
+	service, err := c.ReadService(testServiceID)
+	assert.Error(t, err)
+	_, ok := err.(ErrorNotFound)
+	assert.True(t, ok)
+	assert.Nil(t, service)
+}
+
 func TestAccServiceCRUD(t *testing.T) {
 	if !isAccTest() {
 		t.SkipNow()
