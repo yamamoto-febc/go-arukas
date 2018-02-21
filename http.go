@@ -14,6 +14,9 @@ import (
 	"time"
 )
 
+// ErrorNotFound represents 404 not found error
+type ErrorNotFound error
+
 type httpAPI interface {
 	get(path string) ([]byte, error)
 	patch(path string, body interface{}) ([]byte, error)
@@ -179,7 +182,7 @@ func (c *httpClient) do(req *http.Request) ([]byte, error) {
 // CheckResponse returns an error (of type *Error) if the response.
 func checkResponse(res *http.Response) error {
 	if res.StatusCode == 404 {
-		return fmt.Errorf("The resource does not found on the server: %s", res.Request.URL)
+		return ErrorNotFound(fmt.Errorf("The resource does not found on the server: %s", res.Request.URL))
 	} else if res.StatusCode >= 400 {
 		return fmt.Errorf("Got realClient status code >= 400: %s", res.Status)
 	}

@@ -130,6 +130,11 @@ func (s *ServiceData) ServiceID() string {
 	return s.Data.ID
 }
 
+// AppID returns data.attributes.app_id
+func (s *ServiceData) AppID() string {
+	return s.Data.Attributes.AppID
+}
+
 // Type returns data.type
 func (s *ServiceData) Type() string {
 	return s.Data.Type

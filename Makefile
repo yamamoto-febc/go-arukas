@@ -23,7 +23,7 @@ test: lint
 
 .PHONY: lint
 lint: fmt
-	gometalinter --vendor --skip=vendor/ --cyclo-over=15 --disable=gas --deadline=1m ./...
+	gometalinter --vendor --skip=vendor/ --cyclo-over=15 --disable=gas --deadline=2m ./...
 	@echo
 
 .PHONY: fmt
