@@ -8,13 +8,13 @@ const (
 )
 
 const (
-	// PlanFree represents the "free" region
+	// PlanFree represents the "free" plan
 	PlanFree = "free"
-	// PlanHobby represents the "hobby" region
+	// PlanHobby represents the "hobby" plan
 	PlanHobby = "hobby"
-	// PlanStandard1 represents the "standard-1" region
+	// PlanStandard1 represents the "standard-1" plan
 	PlanStandard1 = "standard-1"
-	// PlanStandard2 represents the "standard-2" region
+	// PlanStandard2 represents the "standard-2" plan
 	PlanStandard2 = "standard-2"
 )
 
