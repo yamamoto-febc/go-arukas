@@ -1,6 +1,7 @@
 # go-arukas
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/yamamoto-febc/go-arukas)](https://goreportcard.com/report/github.com/yamamoto-febc/go-arukas)
+[![Build Status](https://travis-ci.org/yamamoto-febc/go-arukas.svg?branch=master)](https://travis-ci.org/yamamoto-febc/go-arukas)
 
 This project provides various Go packages to perform operations on [`Arukas`](https://arukas.io).
 
