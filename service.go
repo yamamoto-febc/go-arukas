@@ -23,17 +23,17 @@ func (s *Service) AppID() string {
 
 // Image returns data.attributes.image
 func (s *Service) Image() string {
-	return s.Attributes.AppID
+	return s.Attributes.Image
 }
 
 // Command returns data.attributes.command
 func (s *Service) Command() string {
-	return s.Attributes.AppID
+	return s.Attributes.Command
 }
 
 // Instances returns data.attributes.instances
-func (s *Service) Instances() string {
-	return s.Attributes.AppID
+func (s *Service) Instances() int32 {
+	return s.Attributes.Instances
 }
 
 // CPUs returns data.attributes.cups
@@ -151,7 +151,7 @@ func (s *ServiceData) Command() string {
 }
 
 // Instances returns data.attributes.instances
-func (s *ServiceData) Instances() string {
+func (s *ServiceData) Instances() int32 {
 	return s.Data.Instances()
 }
 
