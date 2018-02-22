@@ -207,10 +207,13 @@ func TestAccAppCRUD(t *testing.T) {
 		assert.NotNil(t, res)
 	})
 
-	t.Run("List", func(t *testing.T) {
+	t.Run("List", func(ti *testing.T) {
 		list, err := c.ListApps()
 		assert.NoError(t, err)
 		assert.NotNil(t, list)
+		if list == nil || len(list.Data) == 0 {
+			t.Fatal(err)
+		}
 		assert.True(t, len(list.Data) > 0)
 		id = list.Data[0].ID
 	})
