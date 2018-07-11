@@ -266,7 +266,7 @@ func Example_updateService() {
 		panic(err)
 	}
 
-	fmt.Printf("Service: %#v", updatedService)
+	fmt.Printf("Services: %#v", updatedService)
 }
 
 func Example_powerOn() {

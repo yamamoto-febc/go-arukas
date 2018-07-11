@@ -11,7 +11,6 @@ var realHTTPClient *httpClient
 
 func TestMain(m *testing.M) {
 
-	//環境変数にトークン/シークレットがある場合のみテスト実施
 	token := os.Getenv("ARUKAS_JSON_API_TOKEN")
 	secret := os.Getenv("ARUKAS_JSON_API_SECRET")
 
