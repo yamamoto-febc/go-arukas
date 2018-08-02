@@ -108,12 +108,11 @@ func (ports *Ports) UnmarshalJSON(data []byte) error {
 	var err error
 	if err = json.Unmarshal(data, op); err != nil {
 		// Attempt parse as new format
-		if err := json.Unmarshal(data, np); err != nil {
+		if err = json.Unmarshal(data, np); err != nil {
 			return err
-		} else {
-			if *ports, err = np.toPorts(); err != nil {
-				return err
-			}
+		}
+		if *ports, err = np.toPorts(); err != nil {
+			return err
 		}
 	} else {
 		if *ports, err = op.toPorts(); err != nil {
