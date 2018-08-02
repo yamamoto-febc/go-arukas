@@ -11,7 +11,7 @@ func assertPort(t *testing.T, port *Port, number int32, protocol string) {
 	}
 }
 
-func TestUnmsharlOldPortFormat(t *testing.T) {
+func TestUnmarshalOldPortFormat(t *testing.T) {
 	responseBody := `
 		{
 			"data": {
@@ -39,7 +39,7 @@ func TestUnmsharlOldPortFormat(t *testing.T) {
 	assertPort(t, service.Ports()[2], 34197, "udp")
 }
 
-func TestUnmsharlNewPortFormat(t *testing.T) {
+func TestUnmarshalNewPortFormat(t *testing.T) {
 	responseBody := `
 		{
 			"data": {
