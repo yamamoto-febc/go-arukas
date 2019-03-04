@@ -25,7 +25,7 @@ func TestRequestParam_ValidateForCreate(t *testing.T) {
 				Name:      "foobar",
 				Image:     "foobar:latest",
 				Instances: 1,
-				Ports: []*Port{
+				Ports: Ports{
 					{
 						Protocol: "tcp",
 						Number:   80,
@@ -41,7 +41,7 @@ func TestRequestParam_ValidateForCreate(t *testing.T) {
 				Name:      "foobar",
 				Image:     "foobar:latest",
 				Instances: 1,
-				Ports: []*Port{
+				Ports: Ports{
 					{
 						Protocol: "ssh",
 						Number:   80,
@@ -57,7 +57,7 @@ func TestRequestParam_ValidateForCreate(t *testing.T) {
 				Name:      "foobar",
 				Image:     "foobar:latest",
 				Instances: 1,
-				Ports: []*Port{
+				Ports: Ports{
 					{
 						Protocol: "ssh",
 						Number:   65536,
@@ -73,7 +73,7 @@ func TestRequestParam_ValidateForCreate(t *testing.T) {
 				Name:      "foobar",
 				Image:     "foobar:latest",
 				Instances: 1,
-				Ports: []*Port{
+				Ports: Ports{
 					{
 						Protocol: "tcp",
 						Number:   80,
@@ -90,7 +90,7 @@ func TestRequestParam_ValidateForCreate(t *testing.T) {
 				Name:      "foobar",
 				Image:     "foobar:latest",
 				Instances: 1,
-				Ports: []*Port{
+				Ports: Ports{
 					{
 						Protocol: "tcp",
 						Number:   80,

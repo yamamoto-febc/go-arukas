@@ -9,7 +9,7 @@ type ServiceListData struct {
 
 // Service represents service object
 type Service struct {
-	ID            string               `json:"id"`
+	ID            string               `json:"id,omitempty"`
 	LinkID        int32                `json:"lid,omitempty"`
 	Type          string               `json:"type,omitempty"`
 	Attributes    *ServiceAttr         `json:"attributes,omitempty"`
@@ -52,7 +52,7 @@ func (s *Service) Environment() []*Env {
 }
 
 // Ports returns data.attributes.ports
-func (s *Service) Ports() []*Port {
+func (s *Service) Ports() Ports {
 	return s.Attributes.Ports
 }
 
@@ -117,7 +117,7 @@ type ServiceAttr struct {
 	EndPoint                 string           `json:"endpoint,omitempty"`
 	CustomDomains            []*CustomDomain  `json:"custom-domains,omitempty"`
 	LastInstanceFailedAt     *time.Time       `json:"last-instance-failed-at,omitempty"`
-	LastInstanceFailedStatus string           `json:"last-instance-failed-status,omitempty"`
+	LastInstanceFailedStatus interface{}      `json:"last-instance-failed-status,omitempty"`
 }
 
 // ServiceData represents service data
@@ -171,7 +171,7 @@ func (s *ServiceData) Environment() []*Env {
 }
 
 // Ports returns data.attributes.ports
-func (s *ServiceData) Ports() []*Port {
+func (s *ServiceData) Ports() Ports {
 	return s.Data.Ports()
 }
 

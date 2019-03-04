@@ -2,6 +2,7 @@ package arukas
 
 import (
 	"encoding/json"
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -44,6 +45,11 @@ type Port struct {
 	// Number is port number that container exposes.
 	// Valid value range is [1 - 65535]
 	Number int32 `json:"number"`
+}
+
+// MarshalJSON implements json.Marshaler
+func (p *Port) MarshalJSON() ([]byte, error) {
+	return json.Marshal(fmt.Sprintf("%d/%s", p.Number, p.Protocol))
 }
 
 // Ports is a slice of Ports. A service can have multiple ports.

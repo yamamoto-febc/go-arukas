@@ -227,7 +227,12 @@ func (c *client) PowerOn(id string) error {
 	}
 	path := fmt.Sprintf("/services/%s/power", id)
 	_, err := c.httpAPI.post(path, nil)
-	return err
+	if err != nil {
+		return err
+	}
+
+	time.Sleep(time.Second) // HACK
+	return nil
 }
 
 func (c *client) PowerOff(id string) error {

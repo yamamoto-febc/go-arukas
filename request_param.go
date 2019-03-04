@@ -12,7 +12,7 @@ type RequestParam struct {
 	CustomDomains []string
 	Image         string
 	Instances     int32
-	Ports         []*Port
+	Ports         Ports
 	Environment   []*Env
 	SubDomain     string
 	Region        string
