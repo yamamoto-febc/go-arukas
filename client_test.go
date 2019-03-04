@@ -47,7 +47,7 @@ var validCreateAppParam = &RequestParam{
 	Name:      "foobar",
 	Image:     "nginx:latest",
 	Instances: 1,
-	Ports: []*Port{
+	Ports: Ports{
 		{
 			Protocol: "tcp",
 			Number:   80,
@@ -299,7 +299,6 @@ func TestAccServiceCRUD(t *testing.T) {
 
 		assert.Equal(t, int32(1), res.Data.Attributes.Instances)
 		assert.Equal(t, "httpd:latest", res.Data.Attributes.Image)
-
 	})
 
 	t.Run("PowerOn", func(t *testing.T) {
